@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-let nomialSchema = mongoose.Schema({
-  cointQuantity: {
+let nominalSchema = mongoose.Schema({
+  coinQuantity: {
     type: Number,
     default: 0,
   },
@@ -17,4 +17,4 @@ let nomialSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Nominal", nomialSchema);
+module.exports = mongoose.model("Nominal", nominalSchema);

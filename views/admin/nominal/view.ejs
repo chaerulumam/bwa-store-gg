@@ -5,6 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
+      <%- include ../../partials/messages.ejs %>
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1>Nominal</h1>
@@ -36,7 +37,7 @@
               </h3>
             </div>
             <!-- /.card-header -->
-            <div class="card-body"></div>
+            <div class="card-body"><%- include ./tables.ejs %></div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
