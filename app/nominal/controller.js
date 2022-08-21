@@ -25,7 +25,7 @@ module.exports = {
       res.render("admin/nominal/create");
     } catch (err) {
       req.flash("alertMessage", `${err.message}`);
-      req.flash("alertStatus", "success");
+      req.flash("alertStatus", "danger");
 
       res.redirect("/nominal");
     }
