@@ -17,6 +17,8 @@ module.exports = {
         .populate("nominals");
 
       res.render("admin/voucher/view", {
+        name: req.session.user.name,
+        title: "Voucher",
         voucher,
         alert,
       });
@@ -33,6 +35,8 @@ module.exports = {
       const nominal = await Nominal.find();
 
       res.render("admin/voucher/create", {
+        name: req.session.user.name,
+        title: "Tambah Data",
         category,
         nominal,
       });
@@ -118,6 +122,8 @@ module.exports = {
         .populate("nominals");
 
       res.render("admin/voucher/edit", {
+        name: req.session.user.name,
+        title: `Edit Data "${voucher.name}"`,
         category,
         nominal,
         voucher,

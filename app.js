@@ -6,10 +6,13 @@ const logger = require("morgan");
 const methodOverride = require("method-override");
 const flash = require("connect-flash");
 
+const userRouter = require("./app/user/router")
 const dashboardRouter = require("./app/dashboard/router");
 const categoryRouter = require("./app/category/router");
 const nominalRouter = require("./app/nominal/router");
 const voucherRouter = require("./app/voucher/router");
+const bankRouter = require("./app/bank/router");
+const paymenRouter = require("./app/payment/router");
 
 const session = require("express-session");
 
@@ -40,10 +43,13 @@ app.use(
   express.static(path.join(__dirname, "/node_modules/admin-lte"))
 );
 
-app.use("/", dashboardRouter);
+app.use("/", userRouter);
+app.use("/dashboard", dashboardRouter);
 app.use("/category", categoryRouter);
 app.use("/nominal", nominalRouter);
 app.use("/voucher", voucherRouter);
+app.use("/bank", bankRouter);
+app.use("/payment", paymenRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
