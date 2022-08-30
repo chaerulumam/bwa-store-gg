@@ -1,7 +1,8 @@
 const express = require("express");
-const { landingPage } = require("./controller");
-router = express.Router();
+const router = express.Router();
+const { landingPage, detailPage } = require("./controller");
 
 router.get("/landingpage", landingPage);
+router.get("/:id/detail", detailPage);
 
 module.exports = router;
