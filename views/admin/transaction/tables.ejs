@@ -38,7 +38,7 @@
       <td>
         <% if (transaction[i].status === 'pending') { %>
         <span class="badge badge-warning"> <%= transaction[i].status %> </span>
-        <% } else if(transaction[i].status === 'success') { %>
+        <% } else if (transaction[i].status === 'success') { %>
         <span class="badge badge-success"> <%= transaction[i].status %> </span>
         <% } else {%>
         <span class="badge badge-danger"> <%= transaction[i].status %> </span>
@@ -54,7 +54,7 @@
           style="display: inline-block"
         >
           <button type="submit" class="btn btn-danger btn-sm">
-            <i class="fas fa-times-circle"> Refuse</i>
+            <i class="fas fa-times-circle"> Refuse </i>
           </button>
         </form>
 
