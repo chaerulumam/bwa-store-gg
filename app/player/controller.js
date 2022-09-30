@@ -96,7 +96,9 @@ module.exports = {
       const payload = {
         historyVoucherTopup: {
           gameName: res_voucher._doc.name,
-          category: res_voucher._doc.category ? res_voucher._doc.category : "",
+          category: res_voucher._doc.category
+            ? res_voucher._doc.category.name
+            : "",
           thumbnail: res_voucher._doc.thumbnail,
           coinName: res_nominal._doc.coinName,
           coinQuantity: res_nominal._doc.coinQuantity,
@@ -281,6 +283,7 @@ module.exports = {
 
         src.on("end", async () => {
           let player = await Player.findOne({ _id: req.player._id });
+
           let currentImage = `${config.rootPath}/public/uploads/${player.avatar}`;
           if (fs.existsSync(currentImage)) {
             fs.unlinkSync(currentImage);
